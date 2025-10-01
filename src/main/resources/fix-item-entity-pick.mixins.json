@@ -4,10 +4,12 @@
   "package": "io.github.rakall.fixItemEntityPick.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "EntityDiscardMixin",
-    "ItemEntityStackMixin",
-    "iItemEntityStackMixin"
+    "PickupFix",
+    "GetPickupDelay"
   ],
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "injectors": {
     "defaultRequire": 1
   },
