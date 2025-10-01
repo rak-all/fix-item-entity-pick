@@ -14,8 +14,6 @@ public class PickupFix implements iPickupFix {
 
     @Inject(method = "extract(Lnet/minecraft/inventory/Inventory;Lnet/minecraft/entity/ItemEntity;)Z", at = @At("HEAD"), cancellable = true)
     private static void wrapExtract(Inventory inventory, ItemEntity itemEntity, CallbackInfoReturnable<Boolean> cir) {
-        System.out.println("wrapExtract(Inventory inventory, ItemEntity itemEntity, CallbackInfoReturnable<Boolean> cir)");
-        System.out.println(((GetPickupDelay) itemEntity).getPickupDelay());
         if (((GetPickupDelay) itemEntity).getPickupDelay() < 0) {
             cir.setReturnValue(false);
         }
